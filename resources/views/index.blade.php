@@ -25,15 +25,13 @@
 
     <script>
         let data = "{{ $data }}"
-
+        let myStyle = {
+            "color": "#ff7800",
+            "weight": 5,
+            "opacity": 0.65
+        };
         L.geoJSON(data, {
-            style: function(feature) {
-                return {
-                    color: feature.properties.color
-                };
-            }
-        }).bindPopup(function(layer) {
-            return layer.feature.properties.description;
+            style: myStyle
         }).addTo(map);
     </script>
 
