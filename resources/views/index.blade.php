@@ -20,18 +20,30 @@
 
 <body>
     <div id="map">
-        {{ $data }}
+        {{-- {{ $data }} --}}
     </div>
 
     <script>
-        let data = "{{ $data }}"
-        let myStyle = {
-            "color": "#ff7800",
-            "weight": 5,
-            "opacity": 0.65
-        };
-        L.geoJSON(data, {
-            style: myStyle
+        // let myStyle = {
+        //     "color": "#ff7800",
+        //     "weight": 5,
+        //     "opacity": 0.65
+        // };
+        // L.geoJSON(data, {
+        //     style: myStyle
+        // }).addTo(map);
+        var map = L.map('map').setView([51.505, -0.09], 13);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        var marker = L.marker([51.5, -0.09]).addTo(map);
+        var circle = L.circle([51.508, -0.11], {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5,
+            radius: 500
         }).addTo(map);
     </script>
 

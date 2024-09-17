@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Shapefile\ShapefileReader;
 
 class ShpReader extends Controller
@@ -12,7 +13,8 @@ class ShpReader extends Controller
             if ($Geometry->isDeleted()) {
                 continue;
             }
-           $data = $Geometry->getGeoJSON();
+            $data = $Geometry->getArray();
+            // dd($data);
         }
         return view("index", ["data" => $data]);
     }
