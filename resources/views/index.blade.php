@@ -20,7 +20,7 @@
 
 <body>
     <div id="map">
-        {{-- {{ $data }} --}}
+        {{ $data }}
     </div>
 
     <script>

@@ -7,7 +7,7 @@ class ShpReader extends Controller
 {
     public function Pembaca()
     {
-        $Shapefile = new ShapefileReader(public_path("shp/Wilayah_Adm_Desa_Bukit_Makmur.shp"));
+        $Shapefile = new ShapefileReader(public_path("shp/ADMINISTRASIKABKOTA_AR_50K.shp"));
         while ($Geometry = $Shapefile->fetchRecord()) {
             if ($Geometry->isDeleted()) {
                 continue;
