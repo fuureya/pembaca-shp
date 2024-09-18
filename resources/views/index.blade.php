@@ -44,13 +44,19 @@
         let points = @json($point);
         let data = Object.values(points)
 
+
+
         let result = data.map(point => [point.x, point.y]);
-
-
-
-
-        // console.log(point.x, point.y)
-        var polygon = L.polygon(result).addTo(map);
+        let test = [];
+        result.forEach(element => {
+            test.push(element)
+        });
+        console.log(test)
+        var polygon = L.polygon(test, {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5,
+        }).addTo(map);
     </script>
 
 </body>

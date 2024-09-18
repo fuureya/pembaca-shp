@@ -8,7 +8,7 @@ class ShpReader extends Controller
 {
     public function Pembaca()
     {
-        $Shapefile = new ShapefileReader(public_path("shp/ADMINISTRASIKABKOTA_AR_50K.shp"));
+        $Shapefile = new ShapefileReader(public_path("shp/Wilayah_Adm_Desa_Bukit_Makmur.shp"));
         // while ($Geometry = $Shapefile->fetchRecord()) {
         //     if ($Geometry->isDeleted()) {
         //         continue;
@@ -34,19 +34,29 @@ class ShpReader extends Controller
         }
         
         $data = $Geometry->getArray();
+       
+        // foreach ($data['parts'] as $part) {
+        //     foreach ($part['rings'] as $ring) {
+        //         foreach ($ring['points'] as $point) {
+        //             // Ambil hanya nilai x dan y dari setiap point
+        //             $allPoints[] = [
+        //                 'x' => $point['x'],
+        //                 'y' => $point['y'],
+                        
+        //             ];
+        //         }
+        //     }
+        // }
 
-        foreach ($data['parts'] as $part) {
-            foreach ($part['rings'] as $ring) {
+       foreach ($data['rings'] as $ring) {
                 foreach ($ring['points'] as $point) {
                     // Ambil hanya nilai x dan y dari setiap point
                     $allPoints[] = [
                         'x' => $point['x'],
                         'y' => $point['y'],
-                        
                     ];
                 }
             }
-        }
 
         // Hanya untuk debugging, matikan untuk pengujian sesungguhnya
         // dd($allPoints);
