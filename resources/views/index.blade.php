@@ -19,6 +19,9 @@
 </head>
 
 <body>
+    <div id="test">
+
+    </div>
     <div id="map">
         {{-- {{ $data }} --}}
     </div>
@@ -35,7 +38,7 @@
 
 
 
-        var map = L.map('map').setView([2.1244609028934813, 117.20562271425054], 13);
+        var map = L.map('map').setView([594051.4153938517, 97862.0865809992], 13);
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -46,27 +49,12 @@
 
 
 
-        let result = data.map(point => [point.x, point.y]);
-        let test = [];
-        result.forEach(e => {
-            test.push(e)
-        });
-
-
-        var polygon = L.polygon([
-            [2.1244609028934813, 117.20562271425054],
-            [2.1244609028214813, 117.20564471425054],
-            [1.1244609028214813, 09.205644]
-        ], {
+        let hasil = data.map(point => [point.x, point.y]);
+        var polygon = L.polygon([hasil], {
             color: 'red',
             fillColor: '#f03',
             fillOpacity: 0.5,
         }).addTo(map);
-        // var polygon = L.polygon([
-        //     [2.1244609028934813, 117.20562271425054],
-        //     [2.1244609028214813, 117.20564471425054],
-        //     [1.1244609028214813, 09.205644]
-        // ]).addTo(map);
     </script>
 
 </body>
