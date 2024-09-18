@@ -26,7 +26,7 @@
         {{-- {{ $data }} --}}
     </div>
 
-    <script>
+    <script src="{{ asset('main.js') }}" type="module">
         // let myStyle = {
         //     "color": "#ff7800",
         //     "weight": 5,
@@ -38,26 +38,26 @@
 
 
 
-        var map = L.map('map').setView([119.78515449800013, -5.208919154999964], 13);
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '&copy; <a href="http://www.openstreetmap.org">OpenStreetMap</a>'
-        }).addTo(map);
+        // var map = L.map('map').setView([119.78515449800013, -5.208919154999964], 13);
+        // L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        //     maxZoom: 19,
+        //     attribution: '&copy; <a href="http://www.openstreetmap.org">OpenStreetMap</a>'
+        // }).addTo(map);
 
-        let dataTest = [
-            [119.78515449800013, -5.208919154999964],
-            [119.7842610470001, -5.208667625999936]
-        ]
+        // let dataTest = [
+        //     [119.78515449800013, -5.208919154999964],
+        //     [119.7842610470001, -5.208667625999936]
+        // ]
 
-        let points = @json($point);
-        let data = Object.values(points)
-        let hasil = data.map(point => [point.x, point.y]);
-        console.log(hasil)
-        var polygon = L.polygon([dataTest], {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-        }).addTo(map);
+        // let points = @json($point);
+        // let data = Object.values(points)
+        // let hasil = data.map(point => [point.x, point.y]);
+        // console.log(hasil)
+        // var polygon = L.polygon([dataTest], {
+        //     color: 'red',
+        //     fillColor: '#f03',
+        //     fillOpacity: 0.5,
+        // }).addTo(map);
     </script>
 
 </body>
