@@ -12,8 +12,8 @@
     <title>Test Membaca File shp</title>
     <style>
         #map {
-            width: 300px;
-            height: 300px;
+            width: 1000px;
+            height: 1000px;
         }
     </style>
 </head>
@@ -48,15 +48,25 @@
 
         let result = data.map(point => [point.x, point.y]);
         let test = [];
-        result.forEach(element => {
-            test.push(element)
+        result.forEach(e => {
+            test.push(e)
         });
-        console.log(test)
-        var polygon = L.polygon(test, {
+
+
+        var polygon = L.polygon([
+            [2.1244609028934813, 117.20562271425054],
+            [2.1244609028214813, 117.20564471425054],
+            [1.1244609028214813, 09.205644]
+        ], {
             color: 'red',
             fillColor: '#f03',
             fillOpacity: 0.5,
         }).addTo(map);
+        // var polygon = L.polygon([
+        //     [2.1244609028934813, 117.20562271425054],
+        //     [2.1244609028214813, 117.20564471425054],
+        //     [1.1244609028214813, 09.205644]
+        // ]).addTo(map);
     </script>
 
 </body>
