@@ -15,7 +15,16 @@ class ShpReader extends Controller
             }
             $data = $Geometry->getArray();
             // dd($data);
+            foreach ($data['parts'] as $part) {
+                foreach ($part['rings'] as $ring) {
+                    foreach ($ring['points'] as $point) {
+                        $allPoints[] = $point;
+                    }
+                }
+            }
+
+            // dd($allPoints);
         }
-        return view("index", ["data" => $data]);
+        return view("index", ["point" => $allPoints]);
     }
 }
